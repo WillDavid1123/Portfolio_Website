@@ -9,5 +9,6 @@ Description:
 Development Log
 <ul>
 <li>12/29/2022: Github repository and Vue project files created</li>
+<li>12/31/2022: Clear website of base Vue pages, Figma work on base page layout and Home page</li>
 </ul>
 </ul>

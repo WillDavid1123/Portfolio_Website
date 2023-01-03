@@ -1,13 +1,16 @@
 <template>
-  
+  <p>Projects Page</p>
 </template>
 
 <script>
-
 export default {
-  name: 'About',
+  name: 'Projects',
   components: {
-    
+
   }
 }
 </script>
+
+<style>
+
+</style>

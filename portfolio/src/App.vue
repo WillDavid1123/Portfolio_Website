@@ -1,10 +1,16 @@
 <template>
+ <div>
   <NavBar />
-  <router-view style="margin-top: 60px;"/>
+  <div id="content">
+    <router-view style="margin-top: 60px;"/>
+  </div>
+  <Footer />
+ </div>
 </template>
 
 <script>
 import NavBar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
@@ -12,7 +18,7 @@ export default {
     
   },
   components: {
-    NavBar
+    NavBar, Footer
   }
 }
 </script>
@@ -39,4 +45,11 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+/* #content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1
+} */
 </style>

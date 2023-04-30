@@ -1,5 +1,7 @@
 <template>
-  <p>Announcements Page</p>
+  <div>
+    <p>Announcements Page</p>
+  </div>  
 </template>
 
 <script>

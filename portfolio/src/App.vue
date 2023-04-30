@@ -2,7 +2,7 @@
  <div>
   <NavBar />
   <div id="content">
-    <router-view style="margin-top: 60px;"/>
+    <router-view style="margin-top: 60px; margin-bottom: 1vh;"/>
   </div>
   <Footer />
  </div>
@@ -15,11 +15,11 @@ import Footer from "./components/Footer.vue";
 export default {
   name: "App",
   setup() {
-    
+
   },
   components: {
     NavBar, Footer
-  }
+  },
 }
 </script>
 
@@ -46,10 +46,10 @@ export default {
   color: #42b983;
 }
 
-/* #content {
-  min-height: 100vh;
+#content {
+  min-height: 96.5vh;
   display: flex;
   flex-direction: column;
   flex-grow: 1
-} */
+}
 </style>

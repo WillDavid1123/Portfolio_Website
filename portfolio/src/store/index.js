@@ -2,35 +2,35 @@ import { createStore } from 'vuex'
 
 //Firebase Imports
 import "firebase/compat/firestore";
-import { homeData } from "../firebase.js"
+// import { homeData } from "../firebase.js"
 
 const store =  createStore({
   state: {
     //Firestore States
-    homeDetails: [],
+    // homeDetails: []
   },
   mutations: {
     //Set page details
-    setHomeDetails(state, payload) {
-      state.homeDetails = payload
-    }
+    // setHomeDetails(state, payload) {
+    //   state.homeDetails = payload
+    // }
   },
   actions: {
     //Get page details
-    getHomeDetails() {
-      this.commit("setHomeDetails", homeData)
-    }
+    // getHomeDetails() {
+    //   this.commit("setHomeDetails", homeData)
+    // }
   },
   getters: {
     //Firestore Getters
-    homePage(state) {
-      return state.homeDetails
-    }
+    // homePage(state) {
+    //   return state.homeDetails
+    // }
   },
   modules: {
   }
 })
 
-store.dispatch("getHomeDetails")
+// store.dispatch("getHomeDetails")
 
 export default store

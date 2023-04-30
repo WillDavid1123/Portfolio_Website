@@ -1,5 +1,5 @@
 <template>
-    <nav class="fixed-top navbar navbar-default navbar-expand mt-0 mb-5 p-0"> <!-- Navbar -->
+    <nav class="fixed-top navbar navbar-default navbar-expand mt-0 p-0"> <!-- Navbar -->
         <div class="container-fluid ps-1 pe-1">
             <div class="me-1"> <!-- Logo -->
                 <router-link :to="{name: 'Home'}" class="navbar-header navbar-brand link p-2 m-0" style="text-decoration: none; font-size: 24px;">Logo</router-link>

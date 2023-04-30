@@ -1,29 +1,33 @@
-console.log("Hello")
-import firebase from "firebase/compat/app";
-import "firebase/compat/firestore";
+import { initializeApp } from "firebase/app"
+import { getFirestore } from "firebase/firestore"
+import { onSnapshot, collection } from "firebase/firestore"
+import { ref } from "vue"
 
-export const firebaseConfig = {
-    apiKey: "AIzaSyDl5ST8dLIZ0zDFZQSlQ2CDaoaiNNLMVXM",
-    authDomain: "cs-portfolio-44e18.firebaseapp.com",
-    projectId: "cs-portfolio-44e18",
-    storageBucket: "cs-portfolio-44e18.appspot.com",
-    messagingSenderId: "361134280312",
-    appId: "1:361134280312:web:07d3d5ada8e36cc906678d"
-  };
+const firebaseConfig = {
+  apiKey: "AIzaSyD4-z4PwvQw0R2NUZLt8Z3M8CxmbsObTGQ",
+  authDomain: "portfolio-website-70718.firebaseapp.com",
+  projectId: "portfolio-website-70718",
+  storageBucket: "portfolio-website-70718.appspot.com",
+  messagingSenderId: "116897333691",
+  appId: "1:116897333691:web:c7a24fc53ff1bd9a91c49e"
+}
 
-//Initialize Firestore
-firebase.initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig)
+const db = getFirestore(app)
 
-//Initialize Services
-export const db = firebase.firestore()
+//Grab data for each page on the site
+//  Home Page
+const homePage = ref([])
 
-//Collect data from collection references
-//Home Page Data
-var homePageData = []
-db.collection("Home-Page").get().then((snapshot) => {
-    snapshot.docs.map(doc => {
-        homePageData.push(doc.data())
-    })
+onSnapshot(collection(db, "Home Page"), (querySnapshot) => {
+  const textDocs = [];
+  querySnapshot.forEach((doc) => {
+    const text = doc.data().text
+    textDocs.push(text)
+  })
+  homePage.value = textDocs
 })
-export const homeData = homePageData
-console.log(homeData)
+
+export {
+  db, homePage
+}

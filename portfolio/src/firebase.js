@@ -17,17 +17,53 @@ const db = getFirestore(app)
 
 //Grab data for each page on the site
 //  Home Page
-const homePage = ref([])
+const hPage = ref([])
 
-onSnapshot(collection(db, "Home Page"), (querySnapshot) => {
-  const textDocs = [];
+onSnapshot(collection(db, "Home"), (querySnapshot) => {
+  const docs = [];
   querySnapshot.forEach((doc) => {
-    const text = doc.data().text
-    textDocs.push(text)
+    const text = doc.data()
+    docs.push(text)
   })
-  homePage.value = textDocs
+  hPage.value = docs
+})
+
+//  Announcements Page
+const anPage = ref([])
+
+onSnapshot(collection(db, "Announcements"), (querySnapshot) => {
+  const docs = [];
+  querySnapshot.forEach((doc) => {
+    const text = doc.data()
+    docs.push(text)
+  })
+  anPage.value = docs
+})
+
+//  Projects Page
+const pPage = ref([])
+
+onSnapshot(collection(db, "Projects"), (querySnapshot) => {
+  const docs = [];
+  querySnapshot.forEach((doc) => {
+    const text = doc.data()
+    docs.push(text)
+  })
+  pPage.value = docs
+})
+
+//  About Page
+const abPage = ref([])
+
+onSnapshot(collection(db, "About"), (querySnapshot) => {
+  const docs = [];
+  querySnapshot.forEach((doc) => {
+    const text = doc.data()
+    docs.push(text)
+  })
+  abPage.value = docs
 })
 
 export {
-  db, homePage
+  db, hPage, anPage, pPage, abPage
 }

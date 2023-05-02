@@ -1,9 +1,12 @@
 <template>
   <div>
     <!-- Data from Firebase successfully grabbed -->
-    <div v-if = "homePage[0]">
-      <div>
-        <p> {{ homePage[0] }} </p>
+    <div v-if = "hPage[0]">
+      <div class="container">
+        <h2 class="header"> {{ hPage[0].header }} </h2>
+        <div>
+          <p> {{ hPage[0].top_text }} </p>
+        </div>
       </div>
     </div>
     <!-- Data from Firebase unsuccessfully grabbed -->
@@ -15,20 +18,15 @@
 </template>
 
 <script>
-import { ref } from "vue"
-import { onSnapshot, collection } from "firebase/firestore"
-import { db, homePage } from "../firebase"
+import { hPage } from "../firebase"
 export default {
   name: 'Home',
   components: { },
   setup() {
-  console.log("Home Page FB in firebase.js: ", homePage)
-
-   return { homePage }
+   return { hPage }
   },
 }
 </script>
 
 <style>
-
 </style>

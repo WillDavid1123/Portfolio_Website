@@ -2,7 +2,7 @@
     <nav class="fixed-top navbar navbar-default navbar-expand mt-0 p-0"> <!-- Navbar -->
         <div class="container-fluid ps-1 pe-1">
             <div class="me-1"> <!-- Logo -->
-                <router-link :to="{name: 'Home'}" class="navbar-header navbar-brand link p-2 m-0" style="text-decoration: none; font-size: 24px;">Logo</router-link>
+                <router-link :to="{name: 'Home'}" class="navbar-header navbar-brand link p-2 m-0" style="text-decoration: none; font-size: 24px;">Home</router-link>
             </div>
             <div class="nav navbar-nav me-auto d-none d-sm-block"> <!-- Page links if the page is large enough to show outside of the hamburger -->
                 <router-link :to="{name: 'Announcements'}" class="mx-2 link" style="text-decoration: none; color: #fff">Announcements</router-link>

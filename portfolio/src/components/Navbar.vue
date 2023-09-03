@@ -17,7 +17,7 @@
                                 <button class="btn" data-bs-toggle="dropdown" aria-expanded="false"> <!-- Hamburger Icon -->
                                     <i class="fa-solid fa-bars"></i>
                                 </button>
-                                <ul class="dropdown-menu dropdown-menu-end" style="background-color: rgb(146, 143, 143);"> <!--Hamburger Contents-->
+                                <ul class="dropdown-menu dropdown-menu-end" style="background-color: rgb(165, 165, 165);"> <!--Hamburger Contents-->
                                 <!-- Pages if site size is too small -->
                                     <li><router-link :to="{name: 'Announcements'}" class="dropdown-item btn d-sm-none">Announcements Page</router-link></li>
                                     <li><router-link :to="{name: 'Projects'}" class="dropdown-item btn d-sm-none">Projects Page</router-link></li>

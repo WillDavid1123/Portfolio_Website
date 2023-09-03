@@ -14,7 +14,7 @@ export default {
 
 <style>
 #footer {
-  background-color: rgb(146, 143, 143);
+  background-color: rgb(156, 153, 153);
   padding: 0px;
   height: 3.5vh;
 }

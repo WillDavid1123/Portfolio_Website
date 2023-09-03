@@ -1,5 +1,5 @@
 <template>
-    <div class="modal-dialog"> <!-- Popup -->
+    <div class="modal-dialog modal-dialog-centered"> <!-- Popup -->
         <div class="modal-content" style="width= 600px; height= 400px;">
             <div class="modal-header" style="border-color: black;"> <!-- Popup Head -->
                 <h5 class="modal-title ms-auto" style="color: black">Signup</h5>
@@ -31,7 +31,7 @@
                             <input type="password">
                         </div>
                     </div>
-                    <button class="btn btn-secondary mt-2" style="color: black;">Signup</button>
+                    <button class="btn btn-light mt-2" style="color: black;">Signup</button>
                 </form>
             </div>
         </div>
@@ -47,6 +47,6 @@ export default {
 <style>
 .modal {
     --bs-modal-width: 400px;
-    --bs-modal-bg: rgb(146, 143, 143);
+    --bs-modal-bg: rgb(185, 185, 185);
 }
 </style>

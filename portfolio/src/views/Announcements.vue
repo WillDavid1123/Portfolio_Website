@@ -2,8 +2,13 @@
   <div>
     <!-- Data from Firebase successfully grabbed -->
     <div v-if = "anPage[0]">
-      <h2 class="header"> {{ anPage[0].header }} </h2>
-    </div>
+      <div class="container">
+          <h2 class="header"> {{ anPage[0].header }} </h2>
+          <div>
+            <p> {{ anPage[0].top_text }} </p>
+          </div>
+        </div>
+      </div>
     <!-- Data from Firebase unsuccessfully grabbed -->
     <div v-else>
       <p>Data loading...</p>

@@ -25,7 +25,7 @@
                                 <!-- Popups and other pages that stay within the hamburger -->
                                     <li><button class="dropdown-item btn" type="button" data-bs-toggle="modal" data-bs-target="#LoginModal">Login</button></li>
                                     <li><button class="dropdown-item btn" type="button" data-bs-toggle="modal" data-bs-target="#SignupModal">Signup</button></li>
-                                    <li><button class="dropdown-item btn" type="button">Settings</button></li>
+                                    <li><button class="dropdown-item btn" type="button" data-bs-toggle="modal" data-bs-target="#SettingsModal">Settings</button></li>
                                     <li><button class="dropdown-item btn" type="button">Report Bug</button></li>
                                 </ul>
                             </li>
@@ -41,13 +41,17 @@
     <div id="SignupModal" class="modal fade" tabindex="-1">
         <SignupPopup/>
     </div>
+    <div id="SettingsModal" class="modal fade" tabindex="-1">
+        <SettingsPopup/>
+    </div>
 </template>
 
 <script>
 import LoginPopup from "./LoginPopup.vue";
 import SignupPopup from "./SignupPopup.vue";
+import SettingsPopup from "./SettingsPopup.vue";
 export default {
-    components: { LoginPopup, SignupPopup },
+    components: { LoginPopup, SignupPopup, SettingsPopup },
     setup() {
         
     }

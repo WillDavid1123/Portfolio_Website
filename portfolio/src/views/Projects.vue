@@ -1,11 +1,17 @@
 <template>
   <div>
     <!-- Data from Firebase successfully grabbed -->
-    <div v-if = "pPage[0]">
+    <div v-if = "pPage">
       <div class="container">
         <h2 class="header"> {{ pPage[0].header }} </h2>
         <div>
           <p> {{ pPage[0].top_text }} </p>
+        </div>
+        <br />
+        <div class="row">
+          <div v-for="project in projects.proj" :key="project" class="col-12 col-md-6 col-lg-4">
+            <ProjectCard :p="project" />
+          </div>
         </div>
       </div>
     </div>
@@ -18,13 +24,21 @@
 </template>
 
 <script>
+import { reactive } from "vue"
+import { useStore } from "vuex";
 import { pPage } from "../firebase"
+import ProjectCard from "../components/ProjectCard.vue"
 export default {
   name: 'Projects',
-  components: {
-  },
+  components: { ProjectCard },
   setup() {
-    return { pPage }
+      const store = useStore();
+      const projects = reactive({
+        proj: JSON.parse(JSON.stringify(store.getters.projects)),
+      });
+    console.log(projects.proj)
+
+    return { pPage, projects }
   }
 }
 </script>

@@ -6,8 +6,8 @@
       <div class="card-body">
         <h5 class="card-title" style="text-decoration: underline">{{ project.Name }}</h5>
         <div class="row">
-          <div class="col-4" v-for="skill in skills" :key="skill">
-            <p :class="[x, skill]">{{ skill }}</p>
+          <div class="col-4" v-for="lang in langs" :key="lang">
+            <p :class="[x, lang]">{{ lang }}</p>
           </div>
         </div>
         <p class="card-text text-truncate">
@@ -24,10 +24,10 @@ export default {
   setup(props) {
     const x = "rounded-pill" //Might be able to remove with more research
     const project = props.p
-    const skills = project.Skills.split(" ")
-    console.log(skills)
+    const langs = project.Languages.split(" ")
+    console.log(langs)
 
-    return {project, skills, x}
+    return {project, langs, x}
   },
 };
 </script>

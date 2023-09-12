@@ -1,33 +1,41 @@
 <template>  
   <!-- Use cards to create small project "samples" -->
-  <div>
+  <div v-if="project">
     <div class="card mb-4">
       <!-- <img class="card-img-top" :src="project.Picture" alt="Image of {{ project.Name }}" /> -->
       <div class="card-body">
         <h5 class="card-title" style="text-decoration: underline">{{ project.Name }}</h5>
         <div class="row">
-          <div class="col-4" v-for="lang in langs" :key="lang">
-            <p :class="[x, lang]">{{ lang }}</p>
+          <div class="col-4" v-for="tag in tags" :key="tag">
+            <p :class="[x, tag]">{{ tag }}</p>
           </div>
         </div>
         <p class="card-text text-truncate">
           {{ project.Desc }}
         </p>
+        <a class="btn expand" type="button" data-bs-toggle="modal" data-bs-target=".PM">Expand Card</a>
       </div>
+    </div>
+    <div class="PM modal fade" tabindex="-1">
+      <ProjectPopup/>
     </div>
   </div>
 </template>
 
 <script>
+import ProjectPopup from './ProjectPopup.vue';
+import Projects from '../views/Projects.vue';
 export default {
   props: ["p"],
+  components: { ProjectPopup, Projects },
   setup(props) {
     const x = "rounded-pill" //Might be able to remove with more research
     const project = props.p
-    const langs = project.Languages.split(" ")
-    console.log(langs)
+    const tags = project.Tags.split(" ")
+    console.log("Project Card:")
+    console.log(project)
 
-    return {project, langs, x}
+    return {project, tags, x}
   },
 };
 </script>
@@ -40,5 +48,10 @@ div.card {
 p.rounded-pill {
   border: 1px solid black;
   background-color: rgb(176, 177, 179);
+}
+
+a.expand {
+  color: blue;
+  text-decoration: underline;
 }
 </style>

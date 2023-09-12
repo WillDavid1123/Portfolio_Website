@@ -6,18 +6,17 @@
     </div>
     <!-- Data from Firebase unsuccessfully grabbed -->
     <div v-else>
-      <p>Data loading...</p>
-      <p>If data doesn't load in the next few seconds, please fill out a bug report and try again.</p>
+      <Loading />
     </div>
   </div>  
 </template>
 
 <script>
 import { abPage } from "../firebase"
+import Loading from "./Loading.vue"
 export default {
   name: 'About',
-  components: {
-  },
+  components: { Loading },
   setup() {
     return { abPage }
   }

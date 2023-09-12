@@ -17,8 +17,7 @@
     </div>
     <!-- Data from Firebase unsuccessfully grabbed -->
     <div v-else>
-      <p>Data loading...</p>
-      <p>If data doesn't load in the next few seconds, please fill out a bug report and try again.</p>
+      <Loading />
     </div>
   </div> 
 </template>
@@ -26,9 +25,10 @@
 <script>
 import { pPage, projs } from "../firebase"
 import ProjectCard from "../components/ProjectCard.vue"
+import Loading from "./Loading.vue"
 export default {
   name: 'Projects',
-  components: { ProjectCard },
+  components: { ProjectCard, Loading },
   setup() {
     return { pPage, projs }
   }

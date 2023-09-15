@@ -13,7 +13,7 @@
         <p class="card-text text-truncate">
           {{ project.Desc }}
         </p>
-        <a class="btn expand" type="button" data-bs-toggle="modal" data-bs-target=".PM">Expand Card</a>
+        <button class="btn expand" type="button" data-bs-toggle="modal" data-bs-target=".PM" role="button" @click="updateModal">Expand Card</button>
       </div>
     </div>
     <div class="PM modal fade" tabindex="-1">
@@ -23,19 +23,23 @@
 </template>
 
 <script>
+import { useStore } from "vuex"
 import ProjectPopup from './ProjectPopup.vue';
 import Projects from '../views/Projects.vue';
 export default {
   props: ["p"],
   components: { ProjectPopup, Projects },
   setup(props) {
+    const store = useStore()
     const x = "rounded-pill" //Might be able to remove with more research
     const project = props.p
     const tags = project.Tags.split(" ")
-    console.log("Project Card:")
-    console.log(project)
 
-    return {project, tags, x}
+    const updateModal = () => {
+      store.dispatch('updateProject', [project, tags])
+    }
+
+    return {updateModal, project, tags, x}
   },
 };
 </script>
@@ -50,7 +54,7 @@ p.rounded-pill {
   background-color: rgb(176, 177, 179);
 }
 
-a.expand {
+button.expand {
   color: blue;
   text-decoration: underline;
 }

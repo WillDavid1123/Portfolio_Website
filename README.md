@@ -19,7 +19,8 @@ Development Log
   <li>9/2/2023: Returning after a trip to Germany and settling into a new job. Added top page descriptions to the Announcements and Projects page and adjusted the color to be lighter</li>
   <li>9/5/2023: Created and hooked up base Settings modal, still need to add shell settings</li>
   <li>9/8/2023: Created and implemented a prototype of project cards, hooked up to Firebase, and they now show information about each project. Won't appear if the Projects page is refreshed, need to find a way to "rerun" the card section of HTML. Plan to make an extended modal for each project so cards aren't too long</li>
-  <li>9/11/2023: Fixed project cards so they appear when refreshing on the Projects page, just needed to simplify passing projects as props.</li>
-  <li>9/12/2023: Added Expand button to project cards, but the button only activates the first project's modal. Need to do research on how to change modal's text depending on which project's button is pressed.</li>
+  <li>9/11/2023: Fixed project cards so they appear when refreshing on the Projects page, just needed to simplify passing projects as props</li>
+  <li>9/12/2023: Added Expand button to project cards, but the button only activates the first project's modal. Need to do research on how to change the modal's text depending on which project's button is pressed</li>
+  <li>9/14/2023: Fixed project modal so that it pulls from the Vue Store, which is updated with the correct project's data whenever a project's expand button is pressed. Styled the expand page with the data currently used with projects, will have to update both the card and modal whenever I add a new data field</li>
 </ul>
 </ul>

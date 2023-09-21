@@ -1,14 +1,17 @@
 <template>
   <div>
     <!-- Data from Firebase successfully grabbed -->
-    <div v-if = "anPage[0]">
+    <div v-if = "anPage[0] && anns">
       <div class="container">
           <h2 class="header"> {{ anPage[0].header }} </h2>
           <div>
             <p> {{ anPage[0].top_text }} </p>
           </div>
-        </div>
+          <div v-for="a in anns" :key="a">
+            <annCard :ann="a" />
+          </div>
       </div>
+    </div>
     <!-- Data from Firebase unsuccessfully grabbed -->
     <div v-else>
       <Loading />
@@ -17,13 +20,14 @@
 </template>
 
 <script>
-import { anPage } from "../firebase"
+import { anPage, anns } from "../firebase"
 import Loading from "./Loading.vue"
+import annCard from "../components/AnnCard.vue"
 export default {
   name: 'Announcements',
-  components: { Loading },
+  components: { Loading, annCard },
   setup() {
-    return { anPage }
+    return { anPage, anns }
   }
 }
 </script>

@@ -31,13 +31,25 @@ onSnapshot(collection(db, "Home"), (querySnapshot) => {
 //  Announcements Page
 const anPage = ref([])
 
-onSnapshot(collection(db, "Announcements"), (querySnapshot) => {
+onSnapshot(collection(db, "Announcements Page"), (querySnapshot) => {
   const docs = [];
   querySnapshot.forEach((doc) => {
     const text = doc.data()
     docs.push(text)
   })
   anPage.value = docs
+})
+
+//Announcements
+const anns = ref([])
+
+onSnapshot(collection(db, "Announcements"), (querySnapshot) => {
+  const docs = [];
+  querySnapshot.forEach((doc) => {
+    const text = doc.data()
+    docs.push(text)
+  })
+  anns.value = docs.reverse()
 })
 
 //  Projects Page
@@ -77,5 +89,5 @@ onSnapshot(collection(db, "About"), (querySnapshot) => {
 })
 
 export {
-  db, hPage, anPage, pPage, projs, abPage
+  db, hPage, anPage, anns, pPage, projs, abPage
 }

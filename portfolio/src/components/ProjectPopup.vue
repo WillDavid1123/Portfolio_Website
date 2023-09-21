@@ -14,6 +14,10 @@
                 </div>
                 <p class="card-text"> <strong>Description:</strong> {{ data.Desc }}</p>
             </div>
+            <div class="modal-footer">
+                    <p>Link:</p>
+                    <a :href="[data.Link]">{{ data.Link_Name }}</a>
+            </div>
         </div>
     </div>
 </template>
@@ -41,6 +45,10 @@ export default {
 p.rounded-pill {
   border: 1px solid black;
   background-color: rgb(176, 177, 179);
+}
+
+div.modal-footer {
+    justify-content: center;
 }
 
 </style>

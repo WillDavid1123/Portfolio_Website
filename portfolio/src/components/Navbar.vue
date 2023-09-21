@@ -23,10 +23,10 @@
                                     <li><router-link :to="{name: 'Projects'}" class="dropdown-item btn d-sm-none">Projects Page</router-link></li>
                                     <li><router-link :to="{name: 'About'}" class="dropdown-item btn d-sm-none">About Page</router-link></li>
                                 <!-- Popups and other pages that stay within the hamburger -->
-                                    <li><button class="dropdown-item btn" type="button" data-bs-toggle="modal" data-bs-target="#LoginModal">Login</button></li>
+                                    <!-- <li><button class="dropdown-item btn" type="button" data-bs-toggle="modal" data-bs-target="#LoginModal">Login</button></li>
                                     <li><button class="dropdown-item btn" type="button" data-bs-toggle="modal" data-bs-target="#SignupModal">Signup</button></li>
-                                    <li><button class="dropdown-item btn" type="button" data-bs-toggle="modal" data-bs-target="#SettingsModal">Settings</button></li>
-                                    <li><button class="dropdown-item btn" type="button">Report Bug</button></li>
+                                    <li><button class="dropdown-item btn" type="button" data-bs-toggle="modal" data-bs-target="#SettingsModal">Settings</button></li> -->
+                                    <li><button class="dropdown-item btn" type="button" data-bs-toggle="modal" data-bs-target="#emailMe">Email Me</button></li>
                                 </ul>
                             </li>
                         </ul>
@@ -35,7 +35,7 @@
             </div>
         </div>
     </nav>
-    <div id="LoginModal" class="modal fade" tabindex="-1">
+    <!-- <div id="LoginModal" class="modal fade" tabindex="-1">
         <LoginPopup/>
     </div>
     <div id="SignupModal" class="modal fade" tabindex="-1">
@@ -43,6 +43,9 @@
     </div>
     <div id="SettingsModal" class="modal fade" tabindex="-1">
         <SettingsPopup/>
+    </div> -->
+    <div id="emailMe" class="modal fade" tabindex="-1">
+        <EmailPopup/>
     </div>
 </template>
 
@@ -50,8 +53,9 @@
 import LoginPopup from "./LoginPopup.vue";
 import SignupPopup from "./SignupPopup.vue";
 import SettingsPopup from "./SettingsPopup.vue";
+import EmailPopup from "./EmailPopup.vue"
 export default {
-    components: { LoginPopup, SignupPopup, SettingsPopup },
+    components: { LoginPopup, SignupPopup, SettingsPopup, EmailPopup },
     setup() {
         
     }

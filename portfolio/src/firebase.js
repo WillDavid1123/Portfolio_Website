@@ -88,6 +88,30 @@ onSnapshot(collection(db, "About"), (querySnapshot) => {
   abPage.value = docs
 })
 
+//  About Me Card
+const abMe = ref([])
+
+onSnapshot(collection(db, "About Me"), (querySnapshot) => {
+  const docs = [];
+  querySnapshot.forEach((doc) => {
+    const text = doc.data()
+    docs.push(text)
+  })
+  abMe.value = docs
+})
+
+//  About Website Card
+const abSite = ref([])
+
+onSnapshot(collection(db, "About Site"), (querySnapshot) => {
+  const docs = [];
+  querySnapshot.forEach((doc) => {
+    const text = doc.data()
+    docs.push(text)
+  })
+  abSite.value = docs
+})
+
 export {
-  db, hPage, anPage, anns, pPage, projs, abPage
+  db, hPage, anPage, anns, pPage, projs, abPage, abMe, abSite
 }

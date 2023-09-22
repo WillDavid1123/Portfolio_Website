@@ -65,4 +65,9 @@ button.emailDrop {
     background-color: rgb(146, 143, 143);
 }
 
+textarea {
+    height: 200px;
+    width: 80%;
+}
+
 </style>

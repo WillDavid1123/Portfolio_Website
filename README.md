@@ -24,9 +24,10 @@ Development Log
   <li>9/14/2023: Fixed project modal so that it pulls from the Vue Store, which is updated with the correct project's data whenever a project's expand button is pressed. Styled the expand page with the data currently used with projects, will have to update both the card and modal whenever I add a new data field</li>
   <li>9/21/2023:
     <ul>
-      <li>1) Added project link to project's card so users can go to the project's GitHub repository. Created, hooked up, and finished base announcement cards. Decided to get the project finished and then add user features, so working on an emailing system and adding About info. to finish the 1.0 version. Have the email modal and form look completed, all that's left is to get the email sent and the site can go live.</li>
+      <li>1) Added project link to project's card so users can go to the project's GitHub repository. Created, hooked up, and finished base announcement cards. Decided to get the project finished and then add user features, so working on an emailing system and adding About info. to finish the 1.0 version. Have the email modal and form look completed, all that's left is to get emails sent and more info on the About page so the site can go live.</li>
       <li>2) Continued working on the About page after a short break. Have collapsing cards ready for both information about me and the website with headers, still need to set the rest of the card up.</li>
     </ul>
   </li>
+  <li>9/28/2023: Emails are now being sent, although the monthly limit is annoying. All that's left is the about info, which is mostly stuff I already know how to do</li>
 </ul>
 </ul>

@@ -9,20 +9,20 @@
                 <form @submit.prevent="sendEmail">
                     <div class="form-group">
                         <label for="UserEmail" class="col-form-labels mx-4" style="color: black">Your Email:</label>
-                        <input type="email" required="true">
+                        <input type="email" v-model="Email" required="true">
                     </div>
-                    <div class="dropdown my-3">
-                      <label for="EmailReason" class="col-form-labels mx-3" style="color: black">Reason for your email:</label>
-                      <button class="btn emailDrop dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{ currReason }}</button>
+                    <div class="dropdown mt-3">
+                      <label for="EmailSubject" class="col-form-labels mx-3" style="color: black">Reason for your email:</label>
+                      <button class="btn emailDrop dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{ Subject }}</button>
                       <ul class="dropdown-menu" style="background-color: rgb(165, 165, 165);">
-                        <li><a class="dropdown-item btn" @click="changeReason('Bug Report')">Bug Report</a></li>
-                        <li><a class="dropdown-item btn" @click="changeReason('Suggestion')">Suggestion</a></li>
-                        <li><a class="dropdown-item btn" @click="changeReason('Other')">Other</a></li>
+                        <li><a class="dropdown-item btn" @click="changeSubject('Bug Report')">Bug Report</a></li>
+                        <li><a class="dropdown-item btn" @click="changeSubject('Suggestion')">Suggestion</a></li>
+                        <li><a class="dropdown-item btn" @click="changeSubject('Another Reason')">Another Reason</a></li>
                       </ul>
                     </div>
                     <div>
-                        <label for="message" class="col-form-labels mx-4" style="color: black">Message:</label>
-                        <textarea style="width= 700px;" required="true"></textarea>
+                        <label for="message" class="col-form-labels mx-4 mt-3" style="color: black">Message:</label>
+                        <textarea style="width= 700px;" v-model="Message" required="true"></textarea>
                     </div>    
                     <button class="btn btn-light mt-2" type="submit" style="color: black;">Send Email</button>
                 </form>
@@ -33,19 +33,35 @@
 
 <script>
 import { ref } from "vue"
+import emailjs from '@emailjs/browser'
 export default {
     setup() {
-        const currReason = ref("Bug Report")
+        const Email = ref('')
+        const Message = ref('')
+        const Subject = ref("Bug Report")
 
-        const changeReason = (newReason) => {
-            currReason.value = newReason
+        const changeSubject = (newSubject) => {
+            Subject.value = newSubject
         }
 
         const sendEmail = () => {
-            console.log("Email sent")
+            try {
+                emailjs.send("service_portfolio", "template_e80rg0y", 
+                {
+                    Email:  Email.value,
+                    Message: Message.value,
+                    Subject: Subject.value
+                }
+                , "eeei89kIxHHoRcwwB")
+                alert("Your email has been sent, thanks!")
+            } catch(error) {
+                console.log({ error })
+            }
+            Email.value = ''
+            Message.value = ''
         }
 
-        return { currReason, changeReason, sendEmail }
+        return {Email, Message, Subject, changeSubject, sendEmail }
     }
 
 }

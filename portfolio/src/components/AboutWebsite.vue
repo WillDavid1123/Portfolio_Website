@@ -18,6 +18,12 @@
                     </div>
                 </div>
             </div>
+            <h4>Tech Stack</h4>
+            <div class="row">
+                <div v-for="tech in abSite[2]" :key="tech" class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <p class="tech-box p-2">{{ tech }}</p>
+                </div>
+            </div>
           </div>
         </div>
     </div>
@@ -64,5 +70,10 @@ import { abSite } from "../firebase"
   h4 {
     text-decoration: underline;
     font-weight: bold;
+  }
+
+  .tech-box {
+    background-color: rgb(174, 169, 169);
+    border: 1px solid black;
   }
 </style>

@@ -13,20 +13,11 @@
           </button>
           <!-- About Me Card -->
           <div class="collapse mt-3" id="AboutMe">
-            <div class="card">
-              <div class="card-header">
-                <h2>{{ abMe[0].header }}</h2>
-              </div>
-            </div>
+            <AboutMe/>
           </div>
-
           <!-- About the website Card -->
           <div class="collapse mt-3" id="AboutSite">
-            <div class="card">
-              <div class="card-header">
-                <h2>{{ abSite[0].header }}</h2>
-              </div>
-            </div>
+            <AboutWebsite/>
           </div>
         </div>
       </div>
@@ -41,9 +32,11 @@
 <script>
 import { abPage, abMe, abSite } from "../firebase"
 import Loading from "./Loading.vue"
+import AboutMe from "../components/AboutMe.vue"
+import AboutWebsite from "../components/AboutWebsite.vue"
 export default {
   name: 'About',
-  components: { Loading },
+  components: { Loading, AboutMe, AboutWebsite },
   setup() {
     return { abPage, abMe, abSite }
   }
@@ -63,6 +56,14 @@ button.col {
 
 .card-header {
   font-weight: bold;
+  text-decoration: underline;
+}
+
+.ab-header {
+  text-decoration: underline;
+}
+
+.ab-section {
   text-decoration: underline;
 }
 </style>

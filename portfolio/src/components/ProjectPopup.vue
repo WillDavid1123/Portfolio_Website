@@ -9,7 +9,7 @@
                 <div class="row">
                     <h5 class="card-text col"><strong>Project Tags:</strong></h5>
                     <div class="col" v-for="tag in data.Tags " :key="tag">
-                        <p :class="[x, tag]">{{ tag }}</p>
+                        <p class="rounded-pill">{{ tag }}</p>
                     </div>
                 </div>
                 <p class="card-text"> <strong>Description:</strong> {{ data.Desc }}</p>
@@ -28,9 +28,8 @@ export default {
     setup() {
         const store = useStore()
         const data = store.state
-        const x = "rounded-pill" //Might be able to remove with more research
 
-        return { data, x }
+        return { data }
     }
 
 }

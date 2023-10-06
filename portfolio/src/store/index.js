@@ -15,7 +15,6 @@ const store =  createStore({
   mutations: {
     //Project Modal Update
     setProjectModal(state, payload) {
-      console.log(payload)
       state.Name = payload[0].Name
       state.Desc = payload[0].Desc
       state.Link = payload[0].Link

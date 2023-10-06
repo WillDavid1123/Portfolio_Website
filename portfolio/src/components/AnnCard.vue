@@ -1,7 +1,7 @@
 <template>  
     <!-- Use cards to create announcement blocks" -->
     <div v-if="announcement">
-      <div class="card mb-4">
+      <div class="card">
         <div class="card-header">
           <div class="row">
             <p class="left col">{{ announcement.name }}</p>
@@ -54,7 +54,7 @@
   }
 
   p.title {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     align-self: center;
   }
@@ -62,11 +62,13 @@
   p.right {
     text-align: right;
     align-self: center;
+    font-weight: normal;
   }
 
   p.left {
     text-align: left;
     align-self: center;
+    font-weight: normal;
   }
 
   div.card-footer {

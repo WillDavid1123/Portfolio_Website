@@ -29,5 +29,6 @@ Development Log
     </ul>
   </li>
   <li>9/28/2023: Emails are now being sent, although the monthly limit is annoying. All that's left is the about info, which is mostly stuff I already know how to do</li>
+  <li>10/6/2023: The About page is fully made and the site is being launched today. I'm very excited to not have this project's completion on the back of my brain 24-7. I'll be taking a small break from development to add projects and other data through Firebase.</li>
 </ul>
 </ul>
